@@ -1,0 +1,19 @@
+[project]
+name = "insp-proto"
+version = "0.1.0"
+description = "MVP prototype for distributed AI inspection jobs with Flask and NATS JetStream"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.0",
+    "nats-py>=2.10",
+    "nats-server-bin>=2.14.2",
+    "tzdata>=2024.1",
+]
+
+[project.scripts]
+inspection-ui = "inspection_lite.web:main"
+inspection-worker = "inspection_lite.worker:main"
+inspection-scheduler = "inspection_lite.scheduler:main"
+inspection-heartbeat-api = "inspection_lite.heartbeat_api:main"
+inspection-runner = "inspection_lite.runner:main"
